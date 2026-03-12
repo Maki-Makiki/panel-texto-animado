@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Marquee LED</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="toolbar hide-tools">
+
+        <div class="op-button btn-text">
+            <img src="./T_Text.svg">
+        </div>
+
+        <div class="op-button btn-color">
+            <div class="color-box" id="color-box"></div>
+        </div>
+
+        <div class="op-button wide btn-font">
+            <div class="icon-area">
+                <img src="./T_Font.svg">
+            </div>
+            <div class="value-area" id="font-val">10</div>
+        </div>
+
+
+        <div class="op-button wide btn-space">
+            <div class="icon-area">
+                <img src="./T_Space.svg">
+            </div>
+            <div class="value-area" id="space-val">150px</div>
+        </div>
+
+        <div class="op-button wide btn-time">
+            <div class="icon-area">
+                <img src="./T_Time.svg">
+            </div>
+            <div class="value-area" id="time-val">10s</div>
+        </div>
+
+        <div class="op-button btn-direction">
+            <img id="dir-icon" src="./L_RotateLeft.svg">
+        </div>
+
+        <div class="op-button btn-fullscreen">
+            <img src="./L_ZoomToExtent.svg">
+        </div>
+
+        <div class="op-button btn-options">
+            <img id="menu-icon" src="./T_OpenMenu.svg">
+        </div>
+
+    </div>
+
+    <div class="pagina">
+
+        <div class="marquee-wrapper">
+
+            <div class="marquee-layer layer-frente" id="layer-frente"></div>
+            <div class="marquee-layer layer-blur" id="layer-blur"></div>
+
+        </div>
+
+    </div>
+
+    <!-- MODAL TEXTO -->
+
+    <div class="panel modal-input hide">
+
+        <div class="window-container modal-window">
+
+            <div class="title-container">
+                <span class="title">Editar Texto</span>
+            </div>
+
+            <div class="op-container">
+
+                <input type="text" id="input-led">
+
+            </div>
+
+            <div class="bottom-bar">
+                <div class="btn" id="btn-save">Aceptar</div>
+                <div class="btn" id="btn-cancel">Cancelar</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
