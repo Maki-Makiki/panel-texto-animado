@@ -6,7 +6,7 @@
     --marquee-space: 150px;
 
     --vertical-margin: 80px;
-    --btn-size: clamp(40px, 10vw, 56px);
+    --btn-size: clamp(40px, 10dvw, 56px);
 }
 
 /* BASE */
@@ -32,7 +32,7 @@ body {
 .marquee-wrapper {
 
     width: 100%;
-    height: calc(100vh - (var(--vertical-margin) * 2));
+    height: calc(100dvh - (var(--vertical-margin) * 2));
 
     display: flex;
     align-items: center;
@@ -49,7 +49,7 @@ body {
 
     font-family: monospace;
 
-    font-size: calc((100vh - (var(--vertical-margin) * 2)) * var(--font-mult));
+    font-size: calc((100dvh - (var(--vertical-margin) * 2)) * var(--font-mult));
 
     color: var(--led-color);
 
@@ -251,8 +251,8 @@ body {
 
 .modal-window {
 
-    width: min(90vw, 600px);
-    height: min(40vh, 200px);
+    width: min(90dvw, 600px);
+    height: min(40dvh, 200px);
 
     padding: 20px;
 
