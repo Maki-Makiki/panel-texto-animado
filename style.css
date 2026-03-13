@@ -6,7 +6,7 @@
     --marquee-space: 150px;
 
     --vertical-margin: 80px;
-    --btn-size: min(40px, 10vw);
+    --btn-size: clamp(40px, 10vw, 56px);
 }
 
 /* BASE */
@@ -112,6 +112,7 @@ body {
 
     pointer-events:auto;
     justify-content:flex-end;
+    transition: all ease-in-out 0.2s;
 }
 
 .hide-tools .op-button:not(.btn-options) {
@@ -131,9 +132,10 @@ body {
 
 .op-button {
 
-    height: var(--btn-size);
-    width: var(--btn-size);
+    height:var(--btn-size);
+    width:var(--btn-size);
 
+    padding:calc(var(--btn-size)*0.12);
     border-radius: calc(var(--btn-size) * .25);
 
     background: rgba(33, 33, 33, .2);
@@ -144,7 +146,7 @@ body {
 
     cursor: pointer;
 
-    transition: all .05s;
+    transition: all ease-in-out 0.2s;
     
     flex:0 0 auto;
 }
@@ -157,9 +159,16 @@ body {
     background: rgba(255, 255, 255, .4);
 }
 
-.op-button img {
-    width: 60%;
-    opacity: .8;
+.op-button img{
+    width:70%;
+    max-width:100%;
+    
+    opacity: .5;
+    transition: all ease-in-out .2s;
+}
+
+.toolbar::-webkit-scrollbar{
+    display:none;
 }
 
 /* .op-button span {
@@ -188,8 +197,8 @@ body {
 
 .icon-area img {
 
-    width: 60%;
-    opacity: .8;
+    width: 70%;
+    opacity: .5;
 
 }
 
@@ -206,6 +215,7 @@ body {
     font-size:calc(var(--btn-size)*0.35);
 
     color: white;
+    opacity: .5;
 
     font-variant-numeric: tabular-nums;
 }
@@ -214,12 +224,13 @@ body {
 
 .color-box {
 
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     background: yellow;
+    opacity: .8;
 
 }
 
@@ -265,17 +276,11 @@ body {
 input {
 
     width: 100%;
-
     background: #222;
-
     color: yellow;
-
     border: 1px solid #444;
-
     padding: 10px;
-
     font-family: monospace;
-
     overflow-x: auto;
 
 }
@@ -289,17 +294,11 @@ input {
 .btn {
 
     padding: 6px 15px;
-
     border-radius: 10px;
-
     border: 1px solid rgba(255, 255, 255, .3);
-
     color: white;
-
     font-family: monospace;
-
     cursor: pointer;
-
 }
 
 .hide {
