@@ -6,7 +6,7 @@
     --marquee-space: 150px;
 
     --vertical-margin: 80px;
-    --btn-size: clamp(48px, 10dvw, 56px);
+    --btn-size: clamp(48px, 6vmin, 56px);
 }
 
 /* BASE */
@@ -14,7 +14,7 @@
 body {
     background: black;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     user-select: none;
 }
 
