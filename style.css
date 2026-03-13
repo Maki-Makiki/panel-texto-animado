@@ -115,14 +115,34 @@ body {
     transition: all ease-in-out 0.2s;
 }
 
+.toolbar-scroll{
+
+    display:flex;
+    gap:8px;
+
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    flex:1;
+
+    scrollbar-width:none;
+    mask-image: linear-gradient(to right, transparent, black 20px, black calc(100% - 20px), transparent);
+}
+
+.toolbar-scroll::-webkit-scrollbar{
+    display:none;
+}
+
 .hide-tools .op-button:not(.btn-options) {
     display: none;
 }
 
 .btn-options{
+    
+    flex:0 0 auto;
 
-    position:sticky;
-    right:0;
+    /* position:sticky;
+    right:0; */
 
     background:rgba(33,33,33,.7);
 
@@ -180,8 +200,9 @@ body {
 
 .wide {
     width:calc(var(--btn-size) * 2);
+    height:var(--btn-size);
     display: flex;
-    padding: 0;
+    padding:calc(var(--btn-size)*0.12);
 }
 
 .icon-area {
