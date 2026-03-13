@@ -127,12 +127,44 @@ body {
     flex:1;
 
     scrollbar-width:none;
-    mask-image: linear-gradient(
+    scroll-behavior:smooth;
+    -webkit-overflow-scrolling: touch;
+    transition: all ease-in-out 0.2s;
+    /* mask-image: linear-gradient(
         to right, 
         transparent, 
         black 40px, 
         black calc(100% - 40px), 
-        transparent);
+        transparent); */
+}
+
+/* inicio: fade solo derecha */
+.fade-right{
+    mask-image: linear-gradient(
+        to right,
+        black calc(100% - 40px),
+        transparent
+    );
+}
+
+/* final: fade solo izquierda */
+.fade-left{
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 40px
+    );
+}
+
+/* centro: fade ambos lados */
+.fade-both{
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 40px,
+        black calc(100% - 40px),
+        transparent
+    );
 }
 
 .toolbar-scroll::-webkit-scrollbar{

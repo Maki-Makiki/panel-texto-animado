@@ -53,17 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
             colors[config.colorIdx]
         )
 
-        document.documentElement.style.setProperty(
-            "--direction",
-            colors[config.direction]
-        )
-
         document.getElementById("font-val").innerText = config.font
         document.getElementById("space-val").innerText = spaces[config.spaceIdx] + "px"
         document.getElementById("time-val").innerText = times[config.timeIdx] + "s"
         document.getElementById("color-box").style.background = colors[config.colorIdx]
         if (config.direction) {
-            document.querySelectorAll(".marquee-layer").forEach(layer=>{
+            document.querySelectorAll(".marquee-layer").forEach(layer => {
                 layer.classList.add("reverse")
             })
         }
@@ -128,7 +123,29 @@ document.addEventListener("DOMContentLoaded", () => {
     /* TOOLBAR */
 
     const toolbar = document.querySelector(".toolbar")
+    const toolbarScroll = document.querySelector(".toolbar-scroll")
     const menuIcon = document.getElementById("menu-icon")
+
+    function updateToolbarFade() {
+
+        const scrollLeft = toolbarScroll.scrollLeft
+        const maxScroll = toolbarScroll.scrollWidth - toolbarScroll.clientWidth
+
+        toolbarScroll.classList.remove("fade-left", "fade-right", "fade-both")
+
+        if (scrollLeft <= 5) {
+            toolbarScroll.classList.add("fade-right")
+        }
+        else if (scrollLeft >= maxScroll - 5) {
+            toolbarScroll.classList.add("fade-left")
+        }
+        else {
+            toolbarScroll.classList.add("fade-both")
+        }
+
+    }
+
+    toolbarScroll.addEventListener("scroll", updateToolbarFade)
 
     document.querySelector(".btn-options").onclick = () => {
 
@@ -261,5 +278,5 @@ document.addEventListener("DOMContentLoaded", () => {
     loadConfig();
     applyConfig();
     updateLED();
-
+    updateToolbarFade();
 })
