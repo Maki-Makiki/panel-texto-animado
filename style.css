@@ -6,7 +6,7 @@
     --marquee-space: 150px;
 
     --vertical-margin: 80px;
-    --btn-size: clamp(48px, 8vmax, 72px);
+    --btn-size: min(40px, 10vw);
 }
 
 /* BASE */
